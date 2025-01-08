@@ -14,7 +14,7 @@
 <body>
 <div class="container">
     <nav class="navbar">
-        <a href="#" class="logo">
+        <a href="${pageContext.request.contextPath}" class="logo">
             <i class="fas fa-share-alt-square"></i>
             ReadStack
         </a>
@@ -23,9 +23,9 @@
 
     <aside class="categories">
         <ul>
-            <li><a href="#">Rozrywka</a></li>
-            <li><a href="#">Polityka</a></li>
-            <li><a href="#">Biznes</a></li>
+            <c:forEach var="category" items="${requestScope.categories}">
+                <li><a href="${pageContext.request.contextPath.concat('/category?id=').concat(category.id)}">${category.name}</a></li>
+            </c:forEach>
         </ul>
     </aside>
 
