@@ -2,8 +2,8 @@
     <Resource name="jdbc/readstack"
               factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
               type="javax.sql.DataSource"
-              username="root"
-              password="admin"
+              username="webuser"
+              password="webpass"
               driverClassName="com.mysql.cj.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/readstack?serverTimezone=UTC"/>
+              url="jdbc:mysql://wp-pc:3306/readstack?serverTimezone=UTC"/>
 </Context>
