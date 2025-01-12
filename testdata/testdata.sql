@@ -34,4 +34,17 @@ insert into discovery (title, url, description, date_added, category_id) values 
 insert into discovery (title, url, description, date_added, category_id) values ('venenatis turpis', 'https://w3.org/diam/in/magna.aspx', 'sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod', '2020-02-18 15:15:44', 1);
 insert into discovery (title, url, description, date_added, category_id) values ('at velit', 'https://1688.com/porttitor/lacus/at/turpis/donec/posuere.html', 'magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui', '2020-08-29 11:54:58', 3);
 
+CREATE TABLE IF NOT EXISTS user (
+                                    id INT PRIMARY KEY AUTO_INCREMENT,
+                                    username VARCHAR(50) NOT NULL UNIQUE,
+                                    email VARCHAR(100) NOT NULL UNIQUE,
+                                    registration_date DATETIME NOT NULL,
+                                    password VARCHAR(100) NOT NULL
+);
 
+CREATE TABLE IF NOT EXISTS user_role (
+                                         username VARCHAR(50) NOT NULL,
+                                         role_name VARCHAR(20) NOT NULL DEFAULT 'USER',
+                                         PRIMARY KEY (username, role_name),
+                                         FOREIGN KEY (username) REFERENCES user(username)
+);
