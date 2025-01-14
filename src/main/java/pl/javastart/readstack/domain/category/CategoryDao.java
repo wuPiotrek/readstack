@@ -11,16 +11,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class CategoryDao extends BaseDao {
-//
-//    private final DataSource dataSource;
-//
-//    public CategoryDao() {
-//        try {
-//            this.dataSource = DataSourceProvider.getDataSource();
-//        } catch (NamingException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
 
     public List<Category> findAll() {
         final String query = """

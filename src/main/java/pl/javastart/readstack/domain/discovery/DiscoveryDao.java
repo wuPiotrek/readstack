@@ -1,26 +1,13 @@
 package pl.javastart.readstack.domain.discovery;
 
-import pl.javastart.readstack.config.DataSourceProvider;
 import pl.javastart.readstack.domain.common.BaseDao;
 
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DiscoveryDao extends BaseDao {
-
-//    private final DataSource dataSource;
-//
-//    public DiscoveryDao() {
-//        try {
-//            this.dataSource = DataSourceProvider.getDataSource();
-//        } catch (NamingException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
 
     public List<Discovery> findAll() {
         final String query = """
