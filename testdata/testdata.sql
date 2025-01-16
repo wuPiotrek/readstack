@@ -48,3 +48,11 @@ CREATE TABLE IF NOT EXISTS user_role (
                                          PRIMARY KEY (username, role_name),
                                          FOREIGN KEY (username) REFERENCES user(username)
 );
+
+ALTER TABLE discovery
+    ADD user_id INT,
+    ADD FOREIGN KEY (user_id) REFERENCES user(id);
+# choose id to update all discoveries
+UPDATE discovery SET user_id = 1;
+
+ALTER TABLE discovery MODIFY COLUMN user_id INT NOT NULL;

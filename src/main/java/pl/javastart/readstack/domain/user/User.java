@@ -9,26 +9,15 @@ public class User {
     private String password;
     private LocalDateTime registrationDate;
 
+    public User(Integer id, String username, String email, String password, LocalDateTime registrationDate) {
+        this(username, email, password, registrationDate);
+        this.id = id;
+    }
+
     public User(String username, String email, String password, LocalDateTime registrationDate) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.registrationDate = registrationDate;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setRegistrationDate(LocalDateTime registrationDate) {
         this.registrationDate = registrationDate;
     }
 
@@ -54,5 +43,9 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
